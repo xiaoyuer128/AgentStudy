@@ -4,6 +4,8 @@ from chromadb.config import Settings   #  对向量数据进行配置（配置�
 import json
 from openai import OpenAI
 import os
+
+
 API_BASE_URL = 'https://dashscope.aliyuncs.com/compatible-mode/v1'
 client = OpenAI(
     api_key=os.getenv("DASHSCOPE_API_KEY"),
@@ -37,9 +39,9 @@ print("outputs：",outputs)
 # 负责和向量数据库打交道，接收文档转为向量，并保存到向量数据库中，然后根据需要从向量库中检索出最相似的记录
 class MyVectorDBConnector:
     def __init__(self, collection_name, embedding_fn):
-        #当前配置中，数据保存在内存中，如果需要持久化到磁盘，需使用 PersistentClient创建客户端
         chroma_client = chromadb.Client(Settings(allow_reset=True))
 
+        #当前配置中，数据保存在内存中，如果需要持久化到磁盘，需使用 PersistentClient创建客户端
         # chroma_client = chromadb.PersistentClient(
         #     path="./chroma_data"
         # )

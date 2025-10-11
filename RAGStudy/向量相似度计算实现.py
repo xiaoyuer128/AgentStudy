@@ -45,8 +45,9 @@ documents = [
 #向量化：获取查询的嵌入表示和文档的嵌入表示
 query_vec = get_embeddings([query])[0]
 doc_vecs = get_embeddings(documents)
-
-print("Cosine distance:")
+# print(query_vec)
+# print(doc_vecs[0])
+print("Cos distance:")
 print(cos_sim(query_vec, query_vec))
 for vec in doc_vecs:
     print(cos_sim(query_vec, vec))
