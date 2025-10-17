@@ -12,8 +12,8 @@ re.split(pattern, string)：这是 Python 的 re 模块中的一个函数，用�
 r'(。|？|！|\..\..)'：这是一个正则表达式模式，用于匹配中文句子结束的标点符号。
 ，re.split 函数会返回一个列表，其中包含分割后的子字符串和匹配到的标点符号
 '''
-sentences = re.split(r'(。|？|！|\..\..)', text)
-print(sentences)
+sentences = re.split(r'(。|？|！|)', text)#sentences作为列表存储
+# print(sentences)
 
 # 重新组合句子和结尾的标点符号
 '''[::2] 是 Python 中列表切片的语法，表示从列表中以步长为 2 提取元素。具体含义如下：
@@ -36,6 +36,7 @@ print(sentences)
 #  sentences[::2] ---
 chunks = [sentence + (punctuation if punctuation else '') for sentence, punctuation in
           zip(sentences[::2], sentences[1::2])]
+print(chunks)
 
 for i, chunk in enumerate(chunks):
     print(f"块 {i + 1} - 长度{len(chunk)}，内容: {chunk}")

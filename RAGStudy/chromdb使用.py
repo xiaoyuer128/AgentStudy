@@ -84,7 +84,7 @@ vector_db.add_documents(instructions, outputs)
 # user_query = "白癜风"
 user_query = "得了白癜风怎么办？"
 # 调用 search 方法检索向量数据库
-results = vector_db.search(user_query, 3)
+results = vector_db.search(user_query, 3)#检索相似的三个结果
 print(results)
 # 输出结果
 for para in results['documents'][0]:
