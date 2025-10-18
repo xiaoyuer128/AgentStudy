@@ -2,7 +2,6 @@
 作者：Zxy
 """
 from operator import itemgetter
-
 import langchain
 #开启调试模式
 langchain.debug = True
