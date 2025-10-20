@@ -6,8 +6,6 @@ import langchain
 #开启调试模式
 langchain.debug = True
 import os
-from langchain.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, SystemMessagePromptTemplate, \
     HumanMessagePromptTemplate
 from langchain_core.runnables import RunnableSequence, RunnableLambda
